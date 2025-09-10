@@ -11,9 +11,9 @@ D-Link DIR-605L 2.13B01 BETA
 
 In the D-Link DIR-605L 2.13B01 BETA firmware has a buffer overflow vulnerability in the `formEasySetPassword` function. The `Var` variable receives the `curTime` parameter from a POST request. However, since the user can control the input of `curTime`, the `sprintf` can cause a buffer overflow vulnerability.
 
-![image-20240926125345823](https://raw.githubusercontent.com/abcdefg-png/images2/main/image-20240926125345823.png)
+![image-20240926125345823](formEasySetPassword.assets/image-20240926125345823.png)
 
-![image-20240926125406193](https://raw.githubusercontent.com/abcdefg-png/images2/main/image-20240926125406193.png)
+![image-20240926125406193](formEasySetPassword.assets/image-20240926125406193.png)
 
 ## POC
 
@@ -66,4 +66,4 @@ if __name__ == "__main__":
 
 ```
 
-![image-20240926120958699](https://raw.githubusercontent.com/abcdefg-png/images2/main/image-20240926120958699.png)
+![image-20240926120958699](formEasySetPassword.assets/image-20240926120958699.png)

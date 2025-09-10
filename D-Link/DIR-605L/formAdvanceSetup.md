@@ -11,7 +11,7 @@ D-Link DIR-605L 2.13B01 BETA
 
 In the D-Link DIR-605L 2.13B01 BETA firmware has a buffer overflow vulnerability in the `formAdvanceSetup` function. The `Var` variable receives the `webpage` parameter from a POST request. However, since the user can control the input of `webpage`, the `strcpy` can cause a buffer overflow vulnerability.
 
-![image-20240926123823275](https://raw.githubusercontent.com/abcdefg-png/images2/main/image-20240926123823275.png)
+![image-20240926123823275](formAdvanceSetup.assets/image-20240926123823275.png)
 
 ## POC
 
@@ -64,4 +64,4 @@ if __name__ == "__main__":
 
 ```
 
-![image-20240926120958699](https://raw.githubusercontent.com/abcdefg-png/images2/main/image-20240926120958699.png)
+![image-20240926120958699](formAdvanceSetup.assets/image-20240926120958699.png)

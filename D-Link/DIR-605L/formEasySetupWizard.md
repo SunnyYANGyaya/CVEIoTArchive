@@ -11,7 +11,7 @@ D-Link DIR-605L 2.13B01 BETA
 
 In the D-Link DIR-605L 2.13B01 BETA firmware has a buffer overflow vulnerability in the `formEasySetupWizard` and `formEasySetupWizard2`function. The `Var` variable receives the `curTime` parameter from a POST request. However, since the user can control the input of `curTime`, the `sprintf` can cause a buffer overflow vulnerability.
 
-![image-20240926124738444](https://raw.githubusercontent.com/abcdefg-png/images2/main/image-20240926124738444.png)
+![image-20240926124738444](formEasySetupWizard.assets/image-20240926124738444-1757502958419.png)
 
 ## POC
 
@@ -66,4 +66,4 @@ if __name__ == "__main__":
 
 ```
 
-![image-20240926120958699](https://raw.githubusercontent.com/abcdefg-png/images2/main/image-20240926120958699.png)
+![image-20240926120958699](formEasySetupWizard.assets/image-20240926120958699-1757502955990.png)
