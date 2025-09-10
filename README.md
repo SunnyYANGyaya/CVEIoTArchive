@@ -1,2 +1,13 @@
 # CVEIoTArchive
-Comprehensive collection of IoT-related security vulnerabilities, exploits, and misconfigurations — updated regularly.
+**NOT original research!**
+
+A curated, organized collection of IoT vulnerability repositories — forked, filtered, and categorized for researchers and security professionals.
+
+
+
+| **repositories** | notes |
+| ---------------- | ----- |
+|                  |       |
+|                  |       |
+|                  |       |
+
