@@ -12,11 +12,11 @@ V15.03.05.05
 
 The Tenda AC18 V15.03.05.05 firmware has a stack overflow vulnerability in the `formSetDeviceName` function. The `v7` variable receives the `devName` parameter from a POST request. The value is directly used in a `sprintf` function and passes to a local variable on the stack, which can override the return address of the function. The user-provided `devName` can trigger this security vulnerability.
 
-![image-20240306170433342](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306170433342.png)
+![image-20240306170433342](formSetDeviceName_devName.assets/image-20240306170433342.png)
 
-![image-20240306170444112](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306170444112.png)
+![image-20240306170444112](formSetDeviceName_devName.assets/image-20240306170444112.png)
 
-![image-20240306170453887](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306170453887.png)
+![image-20240306170453887](formSetDeviceName_devName.assets/image-20240306170453887.png)
 
 ## POC
 
@@ -33,4 +33,4 @@ response = requests.post(url, data=data)
 print(response.text)
 ```
 
-![image-20240306171156310](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306171156310.png)
+![image-20240306171156310](formSetDeviceName_devName.assets/image-20240306171156310.png)

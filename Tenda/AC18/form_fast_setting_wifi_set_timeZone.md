@@ -12,9 +12,9 @@ V15.03.05.05
 
 The Tenda AC18 V15.03.05.05 firmware has a stack overflow vulnerability in the `form_fast_setting_wifi_set` function. The `v1` variable receives the `timeZone` parameter from a POST request and is later assigned to the `v16` variable. However, since the user can control the input of  `timeZone`, the statement `sscanf` can cause a buffer overflow. The user-provided  `timeZone` can trigger this security vulnerability.
 
-![image-20240308203931092](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240308203931092.png)
+![image-20240308203931092](form_fast_setting_wifi_set_timeZone.assets/image-20240308203931092.png)
 
-![image-20240308203913642](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240308203913642.png)
+![image-20240308203913642](form_fast_setting_wifi_set_timeZone.assets/image-20240308203913642.png)
 
 ## POC
 
@@ -31,4 +31,4 @@ r = requests.post(url=url, data=payload)
 print(r.content)
 ```
 
-![image-20240308204049360](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240308204049360.png)
+![image-20240308204049360](form_fast_setting_wifi_set_timeZone.assets/image-20240308204049360.png)

@@ -12,9 +12,9 @@ V15.03.05.05
 
 The Tenda AC18 V15.03.05.05 firmware has a stack overflow vulnerability in the `formExpandDlnaFile` function. The `v18` variable receives the `filePath` parameter from a POST request. The value is directly used in a `sprintf` function and passes to a local variable on the stack, which can override the return address of the function. The user-provided `filePath` can trigger this security vulnerability.
 
-![image-20240305164522670](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240305164522670.png)
+![image-20240305164522670](formExpandDlnaFile.assets/image-20240305164522670.png)
 
-![image-20240305162856555](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240305162856555.png)
+![image-20240305162856555](formExpandDlnaFile.assets/image-20240305162856555.png)
 
 ## POC
 
@@ -31,4 +31,4 @@ response = requests.post(url, data=data)
 print(response.text)
 ```
 
-![image-20240305164900093](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240305164900093.png)
+![image-20240305164900093](formExpandDlnaFile.assets/image-20240305164900093.png)

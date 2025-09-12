@@ -36,13 +36,13 @@ _BYTE *__fastcall sub_4F7C0(_BYTE *result, _BYTE *a2)
 
 can cause a stack overflow. The user-provided  `PPPOEPassword` can exceed the capacity of the `s` array, triggering this security vulnerability.
 
-![image-20240306173835516](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306173835516.png)
+![image-20240306173835516](formQuickIndex.assets/image-20240306173835516.png)
 
-![image-20240306173852758](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306173852758.png)
+![image-20240306173852758](formQuickIndex.assets/image-20240306173852758.png)
 
-![image-20240306174000517](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306174000517.png)
+![image-20240306174000517](formQuickIndex.assets/image-20240306174000517.png)
 
-![image-20240306174138778](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306174138778.png)
+![image-20240306174138778](formQuickIndex.assets/image-20240306174138778.png)
 
 ## POC
 
@@ -59,4 +59,4 @@ response = requests.post(url, data=data)
 print(response.text)
 ```
 
-![image-20240306173457625](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306173457625.png)
+![image-20240306173457625](formQuickIndex.assets/image-20240306173457625.png)

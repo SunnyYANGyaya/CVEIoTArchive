@@ -12,11 +12,11 @@ V15.03.05.05
 
 The Tenda AC18 V15.03.05.05 firmware has a stack overflow vulnerability in the `formSetClientState` function. The `v9` variable receives the `deviceId` parameter from a POST request. The value is directly used in a `sprintf` function and passes to a local variable on the stack, which can override the return address of the function. The user-provided  `deviceId` can trigger this security vulnerability.
 
-![image-20240305223025837](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240305223025837.png)
+![image-20240305223025837](formSetClientState_deviceId.assets/image-20240305223025837.png)
 
-![image-20240305223038098](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240305223038098.png)
+![image-20240305223038098](formSetClientState_deviceId.assets/image-20240305223038098.png)
 
-![image-20240305223056646](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240305223056646.png)
+![image-20240305223056646](formSetClientState_deviceId.assets/image-20240305223056646.png)
 
 ## POC
 
@@ -33,4 +33,4 @@ response = requests.post(url, data=data)
 print(response.text)
 ```
 
-![image-20240305222933979](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240305222933979.png)
+![image-20240305222933979](formSetClientState_deviceId.assets/image-20240305222933979.png)

@@ -12,11 +12,11 @@ V15.03.05.05
 
 The Tenda AC18 V15.03.05.05 firmware has a stack overflow vulnerability in the `formSetClientState` function. The `v10` variable receives the `limitSpeedUp` parameter from a POST request. The value is directly used in a `sprintf` function and passes to a local variable on the stack, which can override the return address of the function. The user-provided `limitSpeedUp` can trigger this security vulnerability.
 
-![image-20240306000226211](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306000226211.png)
+![image-20240306000226211](formSetClientState_limitSpeedUp.assets/image-20240306000226211.png)
 
-![image-20240306000240089](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306000240089.png)
+![image-20240306000240089](formSetClientState_limitSpeedUp.assets/image-20240306000240089.png)
 
-![image-20240306000256998](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240306000256998.png)
+![image-20240306000256998](formSetClientState_limitSpeedUp.assets/image-20240306000256998.png)
 
 ## POC
 
@@ -33,4 +33,4 @@ response = requests.post(url, data=data)
 print(response.text)
 ```
 
-![image-20240305223636784](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240305223636784.png)
+![image-20240305223636784](formSetClientState_limitSpeedUp.assets/image-20240305223636784.png)

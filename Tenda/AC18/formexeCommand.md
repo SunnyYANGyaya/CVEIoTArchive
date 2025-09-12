@@ -11,7 +11,7 @@ V15.03.05.05
 
 The Tenda AC18 V15.03.05.05 firmware has a stack overflow vulnerability in the `formexeCommand` function. The `src` variable receives the `cmdinput` parameter from a POST request and is later assigned to the `s` variable, which is fixed at 512 bytes. However, since the user can control the input of `cmdinput`, the statement `strcpy(s, src);` can cause a buffer overflow. The user-provided `cmdinput` can exceed the capacity of the `s` array, triggering this security vulnerability.
 
-![image-20240308164307690](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240308164307690.png)
+![image-20240308164307690](formexeCommand.assets/image-20240308164307690.png)
 
 ## POC
 
@@ -25,4 +25,4 @@ ret = requests.get(url=url,cookies=cookie)
 print(ret.text)
 ```
 
-![image-20240308164235773](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240308164235773.png)
+![image-20240308164235773](formexeCommand.assets/image-20240308164235773.png)
