@@ -10,11 +10,11 @@ AC10U v1.0 Firmware V15.03.06.49
 
 The Tenda AC10U v1.0 V15.03.06.49 firmware has a stack overflow vulnerability in the `formWifiBasicSet` function. The `security_5g` variable receives the `security_5g` parameter from a POST request and is later assigned to the `param_5g` variable, which is fixed at 256 bytes. However, since the user can control the input of `security_5g`, the statement `strcpy(param_5g, security_5g);` can cause a buffer overflow. The user-provided `security_5g` can exceed the capacity of the `param_5g` array, triggering this security vulnerability.
 
-![image-20240309193205961](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240309193205961.png)
+![image-20240309193205961](formWifiBasicSet_security_5g.assets/image-20240309193205961.png)
 
-![image-20240309193158542](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240309193158542.png)
+![image-20240309193158542](formWifiBasicSet_security_5g.assets/image-20240309193158542.png)
 
-![image-20240309193217279](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240309193217279.png)
+![image-20240309193217279](formWifiBasicSet_security_5g.assets/image-20240309193217279.png)
 
 ## PoC
 
@@ -38,4 +38,4 @@ data = {
 requests.post(url, data=data)
 ```
 
-![image-20240304213056127](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240304213056127.png)
+![image-20240304213056127](formWifiBasicSet_security_5g.assets/image-20240304213056127.png)

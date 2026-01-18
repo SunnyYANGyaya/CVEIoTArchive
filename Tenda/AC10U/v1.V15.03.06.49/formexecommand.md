@@ -10,9 +10,9 @@ AC10U v1.0 Firmware V15.03.06.49
 
 The Tenda AC10U v1.0 V15.03.06.49 firmware, we discovered a command injection vulnerablility in `formexeCommand` function in the `cmdinput` parameter and the `str` varable is assigned to `cmd_buf` variable, which is directly used in `doSystemCmd` function, causing an arbitrary command execution. The user-provided `cmdinput` can trigger this security vulnerability.
 
-![image-20240407163019387](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240407163019387.png)
+![image-20240407163019387](formexecommand.assets/image-20240407163019387.png)
 
-![image-20240407163027991](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240407163027991.png)
+![image-20240407163027991](formexecommand.assets/image-20240407163027991.png)
 
 ## POC
 
@@ -24,4 +24,4 @@ data = "cmdinput=ls;"
 ret = requests.post(url=url,data=data)
 ```
 
-![image-20240407162830240](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240407162830240.png)
+![image-20240407162830240](formexecommand.assets/image-20240407162830240.png)

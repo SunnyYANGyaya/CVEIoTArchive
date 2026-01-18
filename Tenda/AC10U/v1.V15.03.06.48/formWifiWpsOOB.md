@@ -10,11 +10,11 @@ AC10U v1.0 Firmware  V15.03.06.48
 
 The Tenda AC10U v1.0 Firmware V15.03.06.48 firmware has a stack overflow vulnerability in the `formWifiWpsOOB` function. The `index` variable receives the `index` parameter from a POST request. The value is directly used in a `sprintf` function and passes to a local variable on the stack, which can override the return address of the function. The user-provided `index` can trigger this security vulnerability.
 
-![image-20240309195802781](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240309195802781.png)
+![image-20240309195802781](formWifiWpsOOB.assets/image-20240309195802781.png)
 
-![image-20240309195638707](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240309195638707.png)
+![image-20240309195638707](formWifiWpsOOB.assets/image-20240309195638707.png)
 
-![image-20240309195719169](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240309195719169.png)
+![image-20240309195719169](formWifiWpsOOB.assets/image-20240309195719169.png)
 
 ## POC
 
@@ -31,4 +31,4 @@ response = requests.post(url, data=data)
 print(response.text)
 ```
 
-![image-20240309195750161](https://raw.githubusercontent.com/abcdefg-png/images/main/image-20240309195750161.png)
+![image-20240309195750161](formWifiWpsOOB.assets/image-20240309195750161.png)
