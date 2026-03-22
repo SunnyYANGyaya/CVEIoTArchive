@@ -10,7 +10,7 @@ TX9 Pro Firmware  V22.03.02.10
 
 The Tenda TX9 Pro Firmware  V22.03.02.10 firmware has a stack overflow vulnerability in the `sub_42BD7C` function. The `v3` variable receives the `time` parameter from a POST request and `v3` is directly parsed into the `v5`, `v6`, `v7` and `v8`. However, since the user can control the input of `v3`, the statement `sscanf(v3, "%d:%d-%d:%d", &v5, &v6, &v7, &v8);` can cause a buffer overflow by `v5`, `v6`, `v7` and `v8`.
 
-![image-20240416115646108](https://raw.githubusercontent.com/abcdefg-png/images2/main/image-20240416115646108.png)
+![image-20240416115646108](SetLEDCfg.assets/image-20240416115646108.png)
 
 ## PoC
 
