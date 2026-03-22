@@ -16,4 +16,5 @@ A curated, organized collection of IoT vulnerability repositories — forked, fi
 | [caoyebo/CVE](https://github.com/caoyebo/CVE)                | √     |
 | [xxy1126/Vuln](https://github.com/xxy1126/Vuln)              |       |
 | [ZZ2266/.github.io](https://github.com/ZZ2266/.github.io/tree/main) |       |
+| [MRAdera/IoT-Vuls](https://github.com/MRAdera/IoT-Vuls)      | √     |
 
